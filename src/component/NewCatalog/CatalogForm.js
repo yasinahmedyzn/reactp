@@ -20,7 +20,6 @@ const CatalogForm = (props) => {
     setImg(e.target.files[0]);
   };
   const handleSubmit = (e) => {
-    console.log("form is submitted");
     e.preventDefault();
     const NewCatalogInfo = {
       img,

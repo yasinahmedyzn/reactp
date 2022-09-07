@@ -5,6 +5,7 @@ const NewCatalog = (props) => {
     const NewCatalogInfo = {
       ...enteredCatalogInfo,
     };
+
     props.onAddCatalogInfo(NewCatalogInfo);
   };
   return (

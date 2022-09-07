@@ -9,6 +9,7 @@ const About = () => {
     setshoplist((prevShopItem) => {
       return [NewCatalogInfo, ...prevShopItem];
     });
+    console.log(NewCatalogInfo);
   };
 
   return (
