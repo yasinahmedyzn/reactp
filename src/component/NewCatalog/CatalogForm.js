@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import axios from "axios";
 import style from "./form.module.css";
 const CatalogForm = (props) => {
   const [code, setID] = useState("");
@@ -16,11 +17,22 @@ const CatalogForm = (props) => {
     setPrice(e.target.value);
   };
   const handleImgChange = (e) => {
-    console.log(e.target.files);
-    setImg(e.target.files[0]);
+    const selectedFile = e.target.files[0];
+    const filePreview = URL.createObjectURL(selectedFile);
+    setImg(filePreview);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // axios
+    //   .post("https://jsonplaceholder.typicode.com/comments?postId=1", {
+    //     img,
+    //     code,
+    //     title,
+    //     price,
+    //   })
+    //   .then((res) => console.log("posting data", res))
+    //   .catch((err) => console.log(err));
     const NewCatalogInfo = {
       img,
       code,
@@ -38,6 +50,7 @@ const CatalogForm = (props) => {
           <input
             className="file-upload-input"
             type="file"
+            name="img"
             onChange={handleImgChange}
           />
         </div>

@@ -8,3 +8,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.6rem;
 }
+.axios {
+  text-align: center;
+  margin-top: 10px;
+}

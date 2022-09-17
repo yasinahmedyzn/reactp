@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./service.css";
 
-const Base_url = "http://localhost:3001/add-user";
+const Base_url = "https://jsonplaceholder.typicode.com/posts";
 
 const Service = () => {
   const [mydata, setData] = useState([]);
   const [isError, setError] = useState("");
+
   useEffect(() => {
     axios
       .get(`${Base_url}`)
       .then((res) => setData(res.data))
       .catch((error) => setError(error.message));
   }, []);
+
   return (
     <div className="container">
       <div>
-        <h1>Axios Data</h1>
+        <h1 className="axios">Axios Data</h1>
         <p>{isError}</p>
         <div className="grid">
           {mydata.map((post) => {
